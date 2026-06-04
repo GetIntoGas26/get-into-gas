@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Orange rounded background -->
+  <rect width="32" height="32" rx="7" fill="#ff5f1f"/>
+  <!-- Headphone arc / headband -->
+  <path d="M6.5 16.5C6.5 10 10.8 6 16 6C21.2 6 25.5 10 25.5 16.5"
+        fill="none" stroke="white" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- Left ear cup -->
+  <rect x="4" y="15" width="5" height="7.5" rx="2.5" fill="white"/>
+  <!-- Right ear cup -->
+  <rect x="23" y="15" width="5" height="7.5" rx="2.5" fill="white"/>
+  <!-- U-bend pipe below ear cups (gas pipe reference) -->
+  <path d="M9 25.5 Q9 29.5 16 29.5 Q23 29.5 23 25.5"
+        fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/>
+</svg>
