@@ -26,7 +26,7 @@ export default function AudioPlayer() {
   const [progress, setProgress]     = useState(0)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration]     = useState(0)
-  const [speedIdx, setSpeedIdx]     = useState(2)
+  const [speedIdx, setSpeedIdx]     = useState(0)
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const urlCache = useRef<Record<string, string>>({})
