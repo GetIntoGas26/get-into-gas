@@ -159,11 +159,11 @@ export default function Home() {
       {/* ABOUT */}
       <section className="about-sec" id="about">
         <div className="sec">
-          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">About</div></div>
-          <h2>Built by engineers.<br /><span className="hl">For engineers.</span></h2>
-          <p className="sec-sub">Get Into Gas was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
           <div className="about-inner">
             <div>
+              <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">About</div></div>
+              <h2>Built by engineers.<br /><span className="hl">For engineers.</span></h2>
+              <p className="sec-sub" style={{ marginBottom: '1.5rem' }}>Get Into Gas was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
               <p className="about-body-text">We built the revision resource we wished we&apos;d had - practical, audio-first, and designed around how working engineers actually live.</p>
               <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you in the van, not the kind you&apos;d find in a regulation document.</p>
               <p className="about-body-text">Help working gas engineers pass their ACS with confidence - whatever their schedule looks like.</p>
