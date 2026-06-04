@@ -21,8 +21,7 @@ export default function Home() {
               <span className="hl2">Pass.</span>
             </h1>
             <p className="hero-sub">
-              Audio revision lessons built for working gas engineers. No desk, no textbooks, no wasted time.
-              Revise in the van, on the tools, anywhere.
+              Audio revision for working gas engineers. No desk, no textbooks — in the van, on the tools, anywhere.
             </p>
             <div className="hero-btns">
               <a href="#pricing" className="btn btn-primary btn-lg">Start Free — No Card Needed</a>
@@ -71,7 +70,7 @@ export default function Home() {
               <div className="prob-accent" />
               <div className="prob-number">01</div>
               <h3>No time to sit and study</h3>
-              <p>Long days on the tools leave little energy for textbook revision in the evenings. Life gets in the way.</p>
+              <p>Long days on the tools leave little energy for textbook revision in the evenings.</p>
             </div>
             <div className="prob-card">
               <div className="prob-accent" />
@@ -83,7 +82,7 @@ export default function Home() {
               <div className="prob-accent" />
               <div className="prob-number">03</div>
               <h3>High stakes, low confidence</h3>
-              <p>The ACS matters for your career. Walking in underprepared is a real risk when revision doesn&apos;t fit your life.</p>
+              <p>Walking in underprepared is a real risk when revision doesn&apos;t fit your life.</p>
             </div>
           </div>
         </div>
@@ -94,7 +93,7 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">How It Works</div></div>
           <h2>Three steps.<br /><span className="hl">No excuses.</span></h2>
-          <p className="sec-sub">Designed around how working engineers actually have time to learn. Simple, focused, effective.</p>
+          <p className="sec-sub">Simple, focused, and built around your day.</p>
           <div className="steps">
             <div className="step">
               <div className="step-head"><div className="step-num">1</div><h3>Pick Your Topic</h3></div>
@@ -102,7 +101,7 @@ export default function Home() {
             </div>
             <div className="step">
               <div className="step-head"><div className="step-num">2</div><h3>Press Play, Go</h3></div>
-              <p>Drive to site, grab lunch, walk the dog — expert audio lessons work anywhere you are. No desk, no screen time needed.</p>
+              <p>Drive to site, grab lunch, break time — audio lessons work anywhere you are. No desk, no screen time needed.</p>
             </div>
             <div className="step">
               <div className="step-head"><div className="step-num">3</div><h3>Know Your Stuff</h3></div>
@@ -143,7 +142,7 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Why ACS Audio</div></div>
           <h2>Built for engineers<br /><span className="hl2">on the tools.</span></h2>
-          <p className="sec-sub">Not a classroom product repackaged for mobile. Built from the ground up for how working engineers actually live.</p>
+          <p className="sec-sub">Not repackaged for mobile. Built around how working engineers actually live.</p>
           <div className="ben-grid">
             {[
               { icon: '🚗', title: 'Commute = Revision Time', desc: 'Turn every drive to site into exam prep. Between jobs, first thing, last thing — it all adds up fast.' },
@@ -166,7 +165,7 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Pricing</div></div>
           <h2>Straight-up <span className="hl">pricing.</span></h2>
-          <p className="sec-sub">No bullshit. No hidden fees. Just access to the revision that gets you through the ACS.</p>
+          <p className="sec-sub">No hidden fees, no surprises. Just the revision that gets you through the ACS.</p>
           <div className="pricing-grid">
             <div className="price-card">
               <div className="p-name">Free</div>
@@ -217,9 +216,9 @@ export default function Home() {
           <p className="sec-sub">ACS Audio was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
           <div className="about-inner">
             <div>
-              <p className="about-body-text">We know what it&apos;s like to face an ACS assessment with a busy diary and no energy left for textbooks in the evening. We built the revision resource we wished we&apos;d had — practical, audio-first, and designed around how working engineers actually live.</p>
+              <p className="about-body-text">We built the revision resource we wished we&apos;d had — practical, audio-first, and designed around how working engineers actually live.</p>
               <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you in the van, not the kind you&apos;d find in a regulation document.</p>
-              <p className="about-body-text">Our goal is simple: help working gas engineers pass their ACS with confidence, whatever their schedule looks like.</p>
+              <p className="about-body-text">Help working gas engineers pass their ACS with confidence — whatever their schedule looks like.</p>
             </div>
             <div className="about-cards">
               {[
@@ -246,7 +245,7 @@ export default function Home() {
         <div className="cta-inner">
           <span className="cta-label">Ready? Start now.</span>
           <h2>Turn downtime into <span className="hl">training time.</span></h2>
-          <p>Every commute, every lunch, every spare 10 minutes. Your ACS assessment won&apos;t wait — and neither should you.</p>
+          <p>Every commute, every lunch, every spare 10 minutes — it all adds up.</p>
           <div className="cta-btns">
             <a href="#pricing" className="btn btn-primary btn-xl">Start Free — No Card →</a>
             <a href="#sample" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
