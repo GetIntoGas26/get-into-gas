@@ -13,10 +13,10 @@ export default function Nav() {
         <div className="nav-inner">
           <a href="#top" className="logo">
             <div className="logo-mark">🎧</div>
-            ACS<em>Audio</em>
+            Get Into<em>Gas</em>
           </a>
           <ul className="nav-links">
-            <li><a href="#sample">Sample</a></li>
+            <li><a href="#top">Sample</a></li>
             <li><a href="#topics">Topics</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About</a></li>
@@ -36,7 +36,7 @@ export default function Nav() {
       </nav>
 
       <div className={`mobile-menu${open ? ' open' : ''}`}>
-        <a href="#sample" onClick={close}>Sample</a>
+        <a href="#top" onClick={close}>Sample</a>
         <a href="#topics" onClick={close}>Topics</a>
         <a href="#pricing" onClick={close}>Pricing</a>
         <a href="#about" onClick={close}>About</a>

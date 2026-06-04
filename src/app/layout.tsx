@@ -8,21 +8,21 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'ACS Audio — CCN1 Revision That Works Around Your Job',
+  title: 'Get Into Gas - CCN1 Revision That Works Around Your Job',
   description: 'CCN1 ACS gas exam revision audio lessons. No desk. No textbooks. Just listen, learn, and pass. Built for real gas engineers.',
   metadataBase: new URL('https://get-into-gas.co.uk'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: 'https://get-into-gas.co.uk',
-    siteName: 'ACS Audio',
-    title: 'ACS Audio — CCN1 Revision That Works Around Your Job',
-    description: 'Audio revision lessons built for working gas engineers. Learn CCN1 anywhere — no desk, no textbooks. ACS exam prep that fits around your job.',
+    siteName: 'Get Into Gas',
+    title: 'Get Into Gas - CCN1 Revision That Works Around Your Job',
+    description: 'Audio revision for working gas engineers. Learn CCN1 anywhere - no desk, no textbooks. ACS exam prep that fits around your job.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ACS Audio — CCN1 Revision That Works Around Your Job',
+    title: 'Get Into Gas - CCN1 Revision That Works Around Your Job',
     description: 'Audio revision for working gas engineers. CCN1 ACS exam prep that fits around your job.',
     images: ['/og-image.png'],
   },

@@ -21,11 +21,11 @@ export default function Home() {
               <span className="hl2">Pass.</span>
             </h1>
             <p className="hero-sub">
-              Audio revision for working gas engineers. No desk, no textbooks — in the van, on the tools, anywhere.
+              Audio revision for working gas engineers. No desk, no textbooks - in the van, on the tools, anywhere.
             </p>
             <div className="hero-btns">
-              <a href="#pricing" className="btn btn-primary btn-lg">Start Free — No Card Needed</a>
-              <a href="#sample" className="btn btn-outline btn-lg">▶ Hear a Sample</a>
+              <a href="#pricing" className="btn btn-primary btn-lg">Start Free - No Card Needed</a>
+              <a href="#top" className="btn btn-outline btn-lg">▶ Hear a Sample</a>
             </div>
             <div className="trust-row">
               <div className="trust-item"><span className="trust-icon">✓</span>Free to try</div>
@@ -59,53 +59,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PROBLEM */}
-      <section>
-        <div className="sec">
-          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">The Problem</div></div>
-          <h2>The old way<br />doesn&apos;t work for <span className="hl">working engineers.</span></h2>
-          <p className="sec-sub">Textbooks in the van. Study after a 10-hour shift. It&apos;s not realistic — and it shouldn&apos;t have to be.</p>
-          <div className="prob-grid">
-            <div className="prob-card">
-              <div className="prob-accent" />
-              <div className="prob-number">01</div>
-              <h3>No time to sit and study</h3>
-              <p>Long days on the tools leave little energy for textbook revision in the evenings.</p>
-            </div>
-            <div className="prob-card">
-              <div className="prob-accent" />
-              <div className="prob-number">02</div>
-              <h3>Dry material, written for academics</h3>
-              <p>Gas regulations read like legal documents. Most revision resources aren&apos;t built for how engineers actually learn.</p>
-            </div>
-            <div className="prob-card">
-              <div className="prob-accent" />
-              <div className="prob-number">03</div>
-              <h3>High stakes, low confidence</h3>
-              <p>Walking in underprepared is a real risk when revision doesn&apos;t fit your life.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* HOW IT WORKS */}
       <section className="hiw-bg">
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">How It Works</div></div>
           <h2>Three steps.<br /><span className="hl">No excuses.</span></h2>
-          <p className="sec-sub">Simple, focused, and built around your day.</p>
+          <p className="sec-sub">Long shifts, dry textbooks, no time to sit and study - we get it. Here&apos;s how working engineers actually revise.</p>
           <div className="steps">
             <div className="step">
               <div className="step-head"><div className="step-num">1</div><h3>Pick Your Topic</h3></div>
-              <p>Choose from 6 focused CCN1 modules — gas safety, tightness testing, combustion and more. Start exactly where you need to.</p>
+              <p>Choose from 6 focused CCN1 modules - gas safety, tightness testing, combustion and more. Start exactly where you need to.</p>
             </div>
             <div className="step">
               <div className="step-head"><div className="step-num">2</div><h3>Press Play, Go</h3></div>
-              <p>Drive to site, grab lunch, break time — audio lessons work anywhere you are. No desk, no screen time needed.</p>
+              <p>Drive to site, grab lunch, break time - audio lessons work anywhere you are. No desk, no screen time needed.</p>
             </div>
             <div className="step">
               <div className="step-head"><div className="step-num">3</div><h3>Know Your Stuff</h3></div>
-              <p>Repeated audio builds genuine retention. Walk into your ACS assessment prepared, not hoping — knowing.</p>
+              <p>Repeated audio builds genuine retention. Walk into your ACS assessment prepared, not hoping - knowing.</p>
             </div>
           </div>
         </div>
@@ -131,29 +102,6 @@ export default function Home() {
                 <h3>{t.title}</h3>
                 <p>{t.desc}</p>
                 <span className="topic-cnt">{t.count} lessons → </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section>
-        <div className="sec">
-          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Why ACS Audio</div></div>
-          <h2>Built for engineers<br /><span className="hl2">on the tools.</span></h2>
-          <p className="sec-sub">Not repackaged for mobile. Built around how working engineers actually live.</p>
-          <div className="ben-grid">
-            {[
-              { icon: '🚗', title: 'Commute = Revision Time', desc: 'Turn every drive to site into exam prep. Between jobs, first thing, last thing — it all adds up fast.' },
-              { icon: '🔁', title: 'Audio Retention Is Real', desc: 'Hearing concepts explained clearly, multiple times, builds the kind of knowledge that holds up when it matters.' },
-              { icon: '📱', title: '10 Minutes at a Time', desc: 'Each lesson is 8–12 minutes. Designed to be started and finished in one go. No chapters. No homework.' },
-              { icon: '🎯', title: 'Straight Talk, No Fluff', desc: 'Written by engineers, for engineers. No academic language. No padding. Just what you need for the ACS.' },
-            ].map(b => (
-              <div key={b.title} className="ben-card">
-                <div className="ben-icon">{b.icon}</div>
-                <h3>{b.title}</h3>
-                <p>{b.desc}</p>
               </div>
             ))}
           </div>
@@ -213,18 +161,19 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">About</div></div>
           <h2>Built by engineers.<br /><span className="hl">For engineers.</span></h2>
-          <p className="sec-sub">ACS Audio was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
+          <p className="sec-sub">Get Into Gas was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
           <div className="about-inner">
             <div>
-              <p className="about-body-text">We built the revision resource we wished we&apos;d had — practical, audio-first, and designed around how working engineers actually live.</p>
+              <p className="about-body-text">We built the revision resource we wished we&apos;d had - practical, audio-first, and designed around how working engineers actually live.</p>
               <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you in the van, not the kind you&apos;d find in a regulation document.</p>
-              <p className="about-body-text">Help working gas engineers pass their ACS with confidence — whatever their schedule looks like.</p>
+              <p className="about-body-text">Help working gas engineers pass their ACS with confidence - whatever their schedule looks like.</p>
             </div>
             <div className="about-cards">
               {[
-                { icon: '🎯', title: '100% Exam Focused', desc: 'Every lesson is built around what actually comes up in the ACS assessment. No filler, no fluff.' },
-                { icon: '👷', title: 'Written by Gas Engineers', desc: 'Content written and reviewed by experienced, registered gas engineers — not academics.' },
-                { icon: '📱', title: 'Genuinely Mobile First', desc: 'Built for your phone. Works in the van, on the go, wherever you are.' },
+                { icon: '🚗', title: 'Commute = Revision Time', desc: 'Turn every drive to site into exam prep. It all adds up fast.' },
+                { icon: '🔁', title: 'Audio Retention Is Real', desc: 'Hearing concepts explained clearly, multiple times, builds knowledge that holds up when it matters.' },
+                { icon: '📱', title: '10 Minutes at a Time', desc: 'Each lesson is 8-12 minutes. Designed to be started and finished in one go.' },
+                { icon: '🎯', title: 'Straight Talk, No Fluff', desc: 'Written by engineers, for engineers. No academic language. Just what you need for the ACS.' },
               ].map(c => (
                 <div key={c.title} className="about-card">
                   <div className="about-icon">{c.icon}</div>
@@ -245,10 +194,10 @@ export default function Home() {
         <div className="cta-inner">
           <span className="cta-label">Ready? Start now.</span>
           <h2>Turn downtime into <span className="hl">training time.</span></h2>
-          <p>Every commute, every lunch, every spare 10 minutes — it all adds up.</p>
+          <p>Every commute, every lunch, every spare 10 minutes - it all adds up.</p>
           <div className="cta-btns">
-            <a href="#pricing" className="btn btn-primary btn-xl">Start Free — No Card →</a>
-            <a href="#sample" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
+            <a href="#pricing" className="btn btn-primary btn-xl">Start Free - No Card →</a>
+            <a href="#top" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
           </div>
           <p className="cta-note">Free trial · Cancel any time · Full CCN1 coverage</p>
         </div>
@@ -257,38 +206,22 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="footer-inner">
-          <div className="footer-grid">
+          <div className="footer-grid" style={{ gridTemplateColumns: '1fr auto' }}>
             <div className="footer-brand">
-              <a href="#top" className="logo"><div className="logo-mark">🎧</div>ACS<em>Audio</em></a>
-              <p>CCN1 audio revision built for working gas engineers. Listen anywhere, pass with confidence.</p>
+              <a href="#top" className="logo"><div className="logo-mark">🎧</div>Get Into<em>Gas</em></a>
+              <p>CCN1 audio revision for working gas engineers.</p>
             </div>
             <div className="footer-col">
-              <h4>Learn</h4>
               <ul>
-                <li><a href="#topics">Topic Library</a></li>
-                <li><a href="#sample">Sample Lesson</a></li>
-                <li><a href="#top">How It Works</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Account</h4>
-              <ul>
+                <li><a href="#top">Sample</a></li>
+                <li><a href="#topics">Topics</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#pricing">Sign Up</a></li>
-                <li><a href="#pricing">Log In</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Company</h4>
-              <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#about">Contact</a></li>
-                <li><a href="#">Privacy</a></li>
               </ul>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>© 2026 ACS Audio. All rights reserved.</p>
+            <p>© 2026 Get Into Gas. All rights reserved.</p>
             <p>CCN1 · ACS Gas Training · Audio Revision</p>
           </div>
         </div>
