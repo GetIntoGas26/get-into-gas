@@ -60,7 +60,7 @@ export default function Home() {
       </div>
 
       {/* HOW IT WORKS */}
-      <section className="hiw-bg">
+      <section className="hiw-bg" id="how-it-works">
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">How It Works</div></div>
           <h2>Three steps.<br /><span className="hl">No excuses.</span></h2>
@@ -206,19 +206,18 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div className="footer-inner">
-          <div className="footer-grid" style={{ gridTemplateColumns: '1fr auto' }}>
-            <div className="footer-brand">
-              <a href="#top" className="logo"><div className="logo-mark">🎧</div>Get Into<em>Gas</em></a>
-              <p>CCN1 audio revision for working gas engineers.</p>
-            </div>
-            <div className="footer-col">
-              <ul>
-                <li><a href="#top">Sample</a></li>
-                <li><a href="#topics">Topics</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-              </ul>
-            </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+            <a href="#top" className="logo">
+              <img src="/icon.svg" width="24" height="24" alt="" style={{ borderRadius: '5px' }} />
+              Get Into<em>Gas</em>
+            </a>
+            <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', padding: 0, margin: 0 }}>
+              <li><a href="#top">Sample</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#topics">Topics</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
           </div>
           <div className="footer-bottom">
             <p>© 2026 Get Into Gas. All rights reserved.</p>
