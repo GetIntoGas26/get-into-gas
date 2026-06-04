@@ -44,8 +44,16 @@ export default function AudioPlayer() {
       }
 
       if (!audioRef.current) {
-        audioRef.current = new Audio()
+        const audio = new Audio()
+        audio.addEventListener('timeupdate', () => {
+          setCurrentTime(audio.currentTime)
+          setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0)
+        })
+        audio.addEventListener('durationchange', () => setDuration(audio.duration))
+        audio.addEventListener('ended', () => { setPlaying(false); setProgress(0); setCurrentTime(0) })
+        audioRef.current = audio
       }
+
       const audio = audioRef.current
       audio.src = urlCache.current[lessonId]
       audio.playbackRate = SPEEDS[speedIdx]
@@ -57,28 +65,6 @@ export default function AudioPlayer() {
       setLoading(false)
     }
   }, [speedIdx])
-
-  // Wire up audio event listeners
-  useEffect(() => {
-    const audio = audioRef.current
-    if (!audio) return
-
-    const onTimeUpdate = () => {
-      setCurrentTime(audio.currentTime)
-      setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0)
-    }
-    const onDurationChange = () => setDuration(audio.duration)
-    const onEnded = () => { setPlaying(false); setProgress(0); setCurrentTime(0) }
-
-    audio.addEventListener('timeupdate', onTimeUpdate)
-    audio.addEventListener('durationchange', onDurationChange)
-    audio.addEventListener('ended', onEnded)
-    return () => {
-      audio.removeEventListener('timeupdate', onTimeUpdate)
-      audio.removeEventListener('durationchange', onDurationChange)
-      audio.removeEventListener('ended', onEnded)
-    }
-  }, [currentId])
 
   const togglePlay = async () => {
     const audio = audioRef.current
@@ -143,7 +129,7 @@ export default function AudioPlayer() {
         <div className="lsn-title">{currentLesson.title}</div>
         <div className="lsn-meta">{currentLesson.meta}{duration ? ` · ${fmt(duration)}` : ''}</div>
 
-        <div className="waveform" onClick={togglePlay}>
+        <div className="waveform" onClick={scrub}>
           {WAVE_HEIGHTS.map((h, i) => (
             <div
               key={i}
