@@ -21,7 +21,7 @@ export default function Home() {
               <span className="hl2">Pass.</span>
             </h1>
             <p className="hero-sub">
-              Audio revision for working gas engineers. No desk, no textbooks - in the van, on the tools, anywhere.
+              Audio lessons for anyone training for gas - whether you&apos;re already in the trade or studying around a completely different job.
             </p>
             <div className="hero-btns">
               <a href="#pricing" className="btn btn-primary btn-lg">Start Free - No Card Needed</a>
@@ -64,7 +64,7 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">How It Works</div></div>
           <h2>Three steps.<br /><span className="hl">No excuses.</span></h2>
-          <p className="sec-sub">Long shifts, dry textbooks, no time to sit and study - we get it. Here&apos;s how working engineers actually revise.</p>
+          <p className="sec-sub">Working security, stacking shelves, plumbing - or already on the tools. Studying for gas around a full-time job is tough. Here&apos;s how it works.</p>
           <div className="steps">
             <div className="step">
               <div className="step-head"><div className="step-num">1</div><h3>Pick Your Topic</h3></div>
@@ -162,11 +162,11 @@ export default function Home() {
           <div className="about-inner">
             <div>
               <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">About</div></div>
-              <h2>Built by engineers.<br /><span className="hl">For engineers.</span></h2>
-              <p className="sec-sub" style={{ marginBottom: '1.5rem' }}>Get Into Gas was created because traditional revision doesn&apos;t work for people with full-time jobs on the tools.</p>
-              <p className="about-body-text">We built the revision resource we wished we&apos;d had - practical, audio-first, and designed around how working engineers actually live.</p>
-              <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you in the van, not the kind you&apos;d find in a regulation document.</p>
-              <p className="about-body-text">Help working gas engineers pass their ACS with confidence - whatever their schedule looks like.</p>
+              <h2>Built by engineers.<br /><span className="hl">For anyone getting into gas.</span></h2>
+              <p className="sec-sub" style={{ marginBottom: '1.5rem' }}>Get Into Gas was created for people studying for their CCN1 around a full-time job - whether that&apos;s already in the trade, or making the move from plumbing, security, retail, or anything else.</p>
+              <p className="about-body-text">We&apos;ve seen it first-hand on gas courses - plumbers, security workers, people who&apos;ve been stacking shelves for years, all trying to get qualified while holding down a full-time job. Traditional revision doesn&apos;t work for them.</p>
+              <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you on a break, not the kind you&apos;d find in a regulation document.</p>
+              <p className="about-body-text">Help anyone getting into gas pass their CCN1 with confidence - whatever their schedule looks like.</p>
             </div>
             <div className="about-cards">
               {[
