@@ -54,8 +54,8 @@ export default function SignupPage() {
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem' }}>
       <div style={{ width: '100%', maxWidth: '400px' }}>
         <a href="/" className="logo" style={{ display: 'inline-flex', marginBottom: '2rem' }}>
-          <div className="logo-mark">🎧</div>
-          ACS<em>Audio</em>
+          <img src="/icon.svg" width="28" height="28" alt="" style={{ borderRadius: '6px' }} />
+          Get Into<em>Gas</em>
         </a>
 
         <h1 style={{ fontSize: '1.75rem', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>

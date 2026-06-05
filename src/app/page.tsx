@@ -124,7 +124,7 @@ export default function Home() {
                 <li><span className="chk-o">✓</span>Mobile player</li>
                 <li><span className="chk-o">✓</span>No card needed</li>
               </ul>
-              <a href="#pricing" className="btn btn-dark-outline btn-lg">Get Started Free</a>
+              <a href="/signup" className="btn btn-dark-outline btn-lg">Get Started Free</a>
             </div>
             <div className="price-card pop">
               <div className="pop-mark">Most Popular</div>
@@ -138,7 +138,7 @@ export default function Home() {
                 <li><span className="chk-o">✓</span>Stream on any device</li>
                 <li><span className="chk-o">✓</span>90 days access</li>
               </ul>
-              <a href="#" className="btn btn-white btn-lg">Get Course Pass →</a>
+              <a href="/signup" className="btn btn-white btn-lg">Get Course Pass →</a>
             </div>
             <div className="price-card">
               <div className="p-name">Lifetime</div>
@@ -150,7 +150,7 @@ export default function Home() {
                 <li><span className="chk-o">✓</span>Works without signal</li>
                 <li><span className="chk-o">✓</span>All future content</li>
               </ul>
-              <a href="#" className="btn btn-dark-outline btn-lg">Get Lifetime Access</a>
+              <a href="/signup" className="btn btn-dark-outline btn-lg">Get Lifetime Access</a>
             </div>
           </div>
         </div>
