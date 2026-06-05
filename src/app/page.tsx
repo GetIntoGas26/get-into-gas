@@ -127,28 +127,28 @@ export default function Home() {
               <a href="#pricing" className="btn btn-dark-outline btn-lg">Get Started Free</a>
             </div>
             <div className="price-card pop">
-              <div className="pop-mark">Popular</div>
-              <div className="p-name">Monthly</div>
-              <div className="p-price"><span className="p-cur">£</span><span className="p-val">14</span><span className="p-per">/mo</span></div>
-              <div className="p-desc">Full access. All lessons, all topics. Cancel any time, no questions asked.</div>
+              <div className="pop-mark">Most Popular</div>
+              <div className="p-name">Course Pass</div>
+              <div className="p-price"><span className="p-cur">£</span><span className="p-val">29</span></div>
+              <div className="p-desc">90 days full access - built around the length of a typical gas course. Stream anywhere with signal.</div>
               <ul className="p-feats">
                 <li><span className="chk-o">✓</span>All 42+ audio lessons</li>
                 <li><span className="chk-o">✓</span>All 6 core topics</li>
-                <li><span className="chk-o">✓</span>New content monthly</li>
                 <li><span className="chk-o">✓</span>Speed controls (1×–2×)</li>
-                <li><span className="chk-o">✓</span>Cancel anytime</li>
+                <li><span className="chk-o">✓</span>Stream on any device</li>
+                <li><span className="chk-o">✓</span>90 days access</li>
               </ul>
-              <a href="#" className="btn btn-white btn-lg">Start Free Trial →</a>
+              <a href="#" className="btn btn-white btn-lg">Get Course Pass →</a>
             </div>
             <div className="price-card">
               <div className="p-name">Lifetime</div>
-              <div className="p-price"><span className="p-cur">£</span><span className="p-val">97</span></div>
-              <div className="p-desc">One payment. All content, forever. Best value for apprenticeships and long-term training.</div>
+              <div className="p-price"><span className="p-cur">£</span><span className="p-val">59</span></div>
+              <div className="p-desc">One payment, forever. Download lessons for offline use - works in the van with no signal.</div>
               <ul className="p-feats">
-                <li><span className="chk-o">✓</span>Everything in Monthly</li>
+                <li><span className="chk-o">✓</span>Everything in Course Pass</li>
+                <li><span className="chk-o">✓</span>Download MP3s for offline use</li>
+                <li><span className="chk-o">✓</span>Works without signal</li>
                 <li><span className="chk-o">✓</span>All future content</li>
-                <li><span className="chk-o">✓</span>Downloadable MP3s</li>
-                <li><span className="chk-o">✓</span>Priority support</li>
               </ul>
               <a href="#" className="btn btn-dark-outline btn-lg">Get Lifetime Access</a>
             </div>
@@ -199,7 +199,7 @@ export default function Home() {
             <a href="#pricing" className="btn btn-primary btn-xl">Start Free - No Card →</a>
             <a href="#top" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
           </div>
-          <p className="cta-note">Free trial · Cancel any time · Full CCN1 coverage</p>
+          <p className="cta-note">Free to try · Course Pass £29 · Lifetime £59</p>
         </div>
       </section>
 
