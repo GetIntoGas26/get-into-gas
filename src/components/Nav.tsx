@@ -1,11 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.auth.getSession().then(({ data }) => {
+      setLoggedIn(!!data.session)
+    })
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
+      setLoggedIn(!!session)
+    })
+    return () => subscription.unsubscribe()
+  }, [])
 
   const close = () => setOpen(false)
+
+  const logout = async () => {
+    const supabase = createClient()
+    await supabase.auth.signOut()
+    window.location.href = '/'
+  }
 
   return (
     <>
@@ -23,8 +42,17 @@ export default function Nav() {
             <li><a href="#about">About</a></li>
           </ul>
           <div className="nav-end">
-            <a href="#pricing" className="btn btn-ghost">Log in</a>
-            <a href="#pricing" className="btn btn-primary">Start Free</a>
+            {loggedIn ? (
+              <>
+                <button className="btn btn-ghost" onClick={logout}>Log out</button>
+                <a href="/lessons" className="btn btn-primary">My Lessons →</a>
+              </>
+            ) : (
+              <>
+                <a href="/login" className="btn btn-ghost">Log in</a>
+                <a href="#pricing" className="btn btn-primary">Start Free</a>
+              </>
+            )}
             <button
               className={`hamburger${open ? ' is-open' : ''}`}
               aria-label="Menu"
@@ -42,8 +70,17 @@ export default function Nav() {
         <a href="#topics" onClick={close}>Topics</a>
         <a href="#pricing" onClick={close}>Pricing</a>
         <a href="#about" onClick={close}>About</a>
-        <a href="#pricing" className="btn btn-ghost" onClick={close}>Log in</a>
-        <a href="#pricing" className="btn btn-primary" onClick={close}>Start Free</a>
+        {loggedIn ? (
+          <>
+            <button className="btn btn-ghost" onClick={() => { close(); logout() }}>Log out</button>
+            <a href="/lessons" className="btn btn-primary" onClick={close}>My Lessons →</a>
+          </>
+        ) : (
+          <>
+            <a href="/login" className="btn btn-ghost" onClick={close}>Log in</a>
+            <a href="#pricing" className="btn btn-primary" onClick={close}>Start Free</a>
+          </>
+        )}
       </div>
     </>
   )
