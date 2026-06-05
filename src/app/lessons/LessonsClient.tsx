@@ -205,7 +205,7 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
         </a>
         <div className="ls-header-right">
           <span className="ls-tier-badge">
-            {tier === 'lifetime' ? '⭐ Lifetime' : '📚 Course Pass'}
+            {tier === 'lifetime' ? '⭐ Lifetime' : '📚 Study Bundle'}
           </span>
           <button className="btn btn-ghost" style={{ fontSize: '0.85rem', padding: '0.4rem 0.9rem' }} onClick={logout}>
             Log out

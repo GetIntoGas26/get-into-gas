@@ -128,9 +128,9 @@ export default function Home() {
             </div>
             <div className="price-card pop">
               <div className="pop-mark">Most Popular</div>
-              <div className="p-name">Course Pass</div>
-              <div className="p-price"><span className="p-cur">£</span><span className="p-val">29</span></div>
-              <div className="p-desc">90 days full access - built around the length of a typical gas course. Stream anywhere with signal.</div>
+              <div className="p-name">Study Bundle</div>
+              <div className="p-price"><span className="p-cur">£</span><span className="p-val">49</span></div>
+              <div className="p-desc">90 days full access - built around the length of a typical gas training period. Stream anywhere with signal.</div>
               <ul className="p-feats">
                 <li><span className="chk-o">✓</span>All 42+ audio lessons</li>
                 <li><span className="chk-o">✓</span>All 6 core topics</li>
@@ -199,7 +199,7 @@ export default function Home() {
             <a href="#pricing" className="btn btn-primary btn-xl">Start Free - No Card →</a>
             <a href="#top" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
           </div>
-          <p className="cta-note">Free to try · Course Pass £29 · Lifetime £59</p>
+          <p className="cta-note">Free to try · Study Bundle £49 · Lifetime £59</p>
         </div>
       </section>
 
