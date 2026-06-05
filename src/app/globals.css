@@ -316,3 +316,61 @@ footer { background: var(--black2); border-top: 1px solid var(--border); padding
   .prob-number { font-size: 2.75rem; }
   .p-val { font-size: 3rem; }
 }
+
+/* ─── LESSONS PAGE ─── */
+.ls-page { min-height: 100vh; background: var(--black); display: flex; flex-direction: column; }
+
+/* Header */
+.ls-header { height: 60px; border-bottom: 1px solid var(--border); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; background: var(--black2); position: sticky; top: 0; z-index: 50; }
+.ls-header-right { display: flex; align-items: center; gap: 1rem; }
+.ls-tier-badge { font-size: 0.78rem; font-weight: 700; color: var(--orange); border: 1px solid rgba(255,95,31,0.3); border-radius: 20px; padding: 0.25rem 0.75rem; }
+
+/* Topic tabs */
+.ls-topics { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--border); flex-shrink: 0; scrollbar-width: none; background: var(--black2); }
+.ls-topics::-webkit-scrollbar { display: none; }
+.ls-tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 0.875rem 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--grey); cursor: pointer; white-space: nowrap; transition: color 0.15s, border-color 0.15s; }
+.ls-tab:hover { color: var(--white); }
+.ls-tab.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* Main scrollable area */
+.ls-main { flex: 1; overflow-y: auto; padding-bottom: 90px; }
+.ls-list { max-width: 720px; margin: 0 auto; padding: 0.5rem 1rem; }
+
+/* Lesson rows */
+.ls-row { display: grid; grid-template-columns: 2.5rem 1fr 2.5rem; align-items: center; gap: 0.75rem; padding: 0.875rem 0.75rem; border-radius: 8px; cursor: pointer; transition: background 0.15s; }
+.ls-row:hover:not(.ls-unavail) { background: rgba(255,255,255,0.04); }
+.ls-current { background: rgba(255,95,31,0.08) !important; }
+.ls-unavail { cursor: default; opacity: 0.45; }
+.ls-num { font-size: 0.85rem; color: var(--grey); text-align: center; font-weight: 600; }
+.ls-check { color: var(--orange); font-weight: 800; font-size: 0.9rem; }
+.ls-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.ls-title { font-size: 0.95rem; font-weight: 600; color: var(--white); }
+.ls-current .ls-title { color: var(--orange); }
+.ls-soon { font-size: 0.75rem; color: var(--grey2); }
+.ls-action { text-align: center; color: var(--grey); font-size: 0.8rem; }
+.ls-row:hover:not(.ls-unavail) .ls-action { color: var(--orange); }
+.ls-current .ls-action { color: var(--orange); }
+.ls-lock { font-size: 0.7rem; }
+
+/* Fixed bottom player */
+.ls-player { position: fixed; bottom: 0; left: 0; right: 0; height: 80px; background: var(--black2); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 1.5rem; gap: 1.5rem; z-index: 100; }
+.ls-pl-info { min-width: 0; }
+.ls-pl-title { font-size: 0.875rem; font-weight: 700; color: var(--white); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ls-pl-topic { font-size: 0.75rem; color: var(--grey); margin-top: 0.1rem; }
+.ls-pl-center { display: flex; align-items: center; gap: 1rem; }
+.ls-pl-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--orange); border: none; color: white; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity 0.15s; }
+.ls-pl-btn:hover { opacity: 0.85; }
+.ls-pl-btn:disabled { opacity: 0.5; cursor: default; }
+.ls-pl-progress { display: flex; flex-direction: column; gap: 0.3rem; width: 280px; }
+.ls-pl-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; }
+.ls-pl-fill { height: 100%; background: var(--orange); border-radius: 2px; transition: width 0.1s linear; }
+.ls-pl-times { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--grey2); }
+.ls-pl-right { display: flex; justify-content: flex-end; }
+.ls-pl-spd { background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 6px; color: var(--grey); font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.6rem; cursor: pointer; transition: color 0.15s; }
+.ls-pl-spd:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  .ls-player { grid-template-columns: 1fr auto; }
+  .ls-pl-info { display: none; }
+  .ls-pl-progress { width: 160px; }
+}
