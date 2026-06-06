@@ -14,23 +14,24 @@ export default function Home() {
           <div className="hero-content">
             <div className="eyebrow">
               <div className="eyebrow-dot" />
-              CCN1 · ACS Gas Training · Audio Revision
+              Future Gas Engineers · CCN1 · ACS Assessments
             </div>
             <h1>
-              <span className="hl">Listen.</span> Learn.<br />
-              <span className="hl2">Pass.</span>
+              <span className="hl">Learn</span> While<br />
+              <span className="hl2">Living.</span>
             </h1>
+            <p className="hero-tagline">The UK&apos;s Audio-First CCN1 Revision Platform</p>
             <p className="hero-sub">
-              Audio lessons for anyone training for gas - whether you&apos;re already in the trade or studying around a completely different job.
+              Turn driving time, walking time and downtime into productive revision time - practical audio lessons for future gas engineers.
             </p>
             <div className="hero-btns">
-              <a href="#pricing" className="btn btn-primary btn-lg">Start Free - No Card Needed</a>
-              <a href="#top" className="btn btn-outline btn-lg">▶ Hear a Sample</a>
+              <a href="/signup" className="btn btn-primary btn-lg">Start Learning →</a>
+              <a href="#top" className="btn btn-outline btn-lg">▶ Listen to a Free Lesson</a>
             </div>
             <div className="trust-row">
               <div className="trust-item"><span className="trust-icon">✓</span>Free to try</div>
-              <div className="trust-item"><span className="trust-icon">✓</span>Cancel any time</div>
-              <div className="trust-item"><span className="trust-icon">✓</span>Full ACS syllabus</div>
+              <div className="trust-item"><span className="trust-icon">✓</span>No card needed</div>
+              <div className="trust-item"><span className="trust-icon">✓</span>Full CCN1 coverage</div>
             </div>
           </div>
           <AudioPlayer />
@@ -59,25 +60,45 @@ export default function Home() {
         </div>
       </div>
 
-      {/* HOW IT WORKS */}
+      {/* PROBLEM */}
       <section className="hiw-bg" id="how-it-works">
         <div className="sec">
-          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">How It Works</div></div>
-          <h2>Three steps.<br /><span className="hl">No excuses.</span></h2>
-          <p className="sec-sub">Working security, stacking shelves, plumbing - or already on the tools. Studying for gas around a full-time job is tough. Here&apos;s how it works.</p>
-          <div className="steps">
-            <div className="step">
-              <div className="step-head"><div className="step-num">1</div><h3>Pick Your Topic</h3></div>
-              <p>Choose from 6 focused CCN1 modules - gas safety, tightness testing, combustion and more. Start exactly where you need to.</p>
+          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">The Problem</div></div>
+          <h2>Finding time to revise<br /><span className="hl">isn&apos;t easy.</span></h2>
+          <p className="sec-sub">As a trainee gas engineer, your days are already busy. Between work, training, family life and travelling, finding extra hours for revision can feel impossible. Many learners know what they need to study - the challenge is finding the time to do it.</p>
+          <div className="solution-block">
+            <h3 className="solution-title">That&apos;s Why We Created Get Into Gas</h3>
+            <p className="solution-sub">Instead of adding more study hours to your week, we help you use the time you already have.</p>
+            <div className="listen-while">
+              <p className="listen-label">Listen while:</p>
+              <div className="listen-grid">
+                {['🚗 Driving to training', '🐕 Walking the dog', '🏃 Going for a run', '🚆 Commuting', '🏋️ At the gym', '📝 Working through notes'].map(item => (
+                  <div key={item} className="listen-item">{item}</div>
+                ))}
+              </div>
             </div>
-            <div className="step">
-              <div className="step-head"><div className="step-num">2</div><h3>Press Play, Go</h3></div>
-              <p>Drive to site, grab lunch, break time - audio lessons work anywhere you are. No desk, no screen time needed.</p>
-            </div>
-            <div className="step">
-              <div className="step-head"><div className="step-num">3</div><h3>Know Your Stuff</h3></div>
-              <p>Repeated audio builds genuine retention. Walk into your ACS assessment prepared, not hoping - knowing.</p>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY AUDIO WORKS */}
+      <section id="why-audio">
+        <div className="sec">
+          <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Why Audio Learning Works</div></div>
+          <h2>Make the most of time<br /><span className="hl">you already have.</span></h2>
+          <div className="ben-grid">
+            {[
+              { icon: '⏱️', title: "Learn During Time You'd Otherwise Lose", desc: "Make use of journeys, walks and waiting time. Every spare minute becomes productive revision time." },
+              { icon: '🔁', title: 'Improve Recall Through Repetition', desc: 'Hear important concepts again and again. Repeated listening builds the kind of memory that sticks.' },
+              { icon: '🧠', title: 'Reduce Revision Overwhelm', desc: 'Focus on one topic at a time. Short, focused lessons make even the densest material feel manageable.' },
+              { icon: '💪', title: 'Build Confidence', desc: 'Arrive at your training sessions and assessments truly knowing the fundamentals - not just hoping you do.' },
+            ].map(b => (
+              <div key={b.title} className="ben-card">
+                <div className="ben-icon">{b.icon}</div>
+                <h3>{b.title}</h3>
+                <p>{b.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -193,11 +214,11 @@ export default function Home() {
         <div className="cta-bg-text">PASS</div>
         <div className="cta-inner">
           <span className="cta-label">Invest in your future.</span>
-          <h2>Turn downtime into <span className="hl">training time.</span></h2>
-          <p>Every commute, every lunch, every spare 10 minutes - it all adds up.</p>
+          <h2>Start Learning<br /><span className="hl">While Living.</span></h2>
+          <p>Join the future gas engineers already using audio revision to make the most of every spare minute.</p>
           <div className="cta-btns">
-            <a href="#pricing" className="btn btn-primary btn-xl">Start Free - No Card →</a>
-            <a href="#top" className="btn btn-outline btn-xl">▶ Hear a Sample First</a>
+            <a href="/signup" className="btn btn-primary btn-xl">Start Learning →</a>
+            <a href="#top" className="btn btn-outline btn-xl">▶ Listen to a Free Lesson</a>
           </div>
           <p className="cta-note">Free to try · Study Bundle £49 · Lifetime £59</p>
         </div>
