@@ -134,7 +134,7 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Pricing</div></div>
           <h2>Straight-up <span className="hl">pricing.</span></h2>
-          <p className="sec-sub">No hidden fees, no surprises. Just the revision that gets you through the ACS.</p>
+          <p className="sec-sub">No hidden fees, no surprises. Just the revision that helps get you through your ACS.</p>
           <div className="pricing-grid">
             <div className="price-card">
               <div className="p-name">Free</div>
@@ -187,7 +187,7 @@ export default function Home() {
               <p className="sec-sub" style={{ marginBottom: '1.5rem' }}>Get Into Gas was created for people studying for their CCN1 around a full-time job - whether that&apos;s already in the trade, or making the move from plumbing, security, retail, or anything else.</p>
               <p className="about-body-text">We&apos;ve seen it first-hand on gas courses - plumbers, security workers, people stacking shelves for years, all trying to get qualified while holding down a full-time job. Book study is valuable, but finding time for it is the hard part. Audio revision fills the gaps - commutes, breaks, the drive home - so when you do sit down with the books, it all clicks faster.</p>
               <p className="about-body-text">Every lesson is written to be direct and genuinely useful. The kind of explanation a good mentor gives you on a break, not the kind you&apos;d find in a regulation document.</p>
-              <p className="about-body-text">Help anyone getting into gas pass their CCN1 with confidence - whatever their schedule looks like.</p>
+              <p className="about-body-text">We help anyone getting into gas pass their CCN1 with confidence - whatever their schedule looks like.</p>
             </div>
             <div className="about-cards">
               {[
