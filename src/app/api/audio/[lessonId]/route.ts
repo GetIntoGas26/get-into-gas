@@ -3,10 +3,9 @@ import { getAudioSignedUrl } from '@/lib/r2'
 import { NextResponse, type NextRequest } from 'next/server'
 
 const LESSONS: Record<string, { file: string; free: boolean }> = {
-  'gas-safety-01': { file: 'ccn1-gas-safety-01-fundamentals.mp3', free: true },
-  'gas-safety-02': { file: 'ccn1-gas-safety-02-tightness-testing.mp3', free: true },
-  'combustion-01': { file: 'ccn1-combustion-01-co-awareness.mp3', free: true },
-  'pipework-01':   { file: 'ccn1-pipework-01-standards.mp3', free: false },
+  'fundamentals-01': { file: 'ccn1-gas-safety-01-fundamentals.mp3', free: true },
+  'fundamentals-02': { file: 'ccn1-gas-safety-02-tightness-testing.mp3', free: true },
+  'combustion-01':   { file: 'ccn1-combustion-01-co-awareness.mp3', free: true },
 }
 
 export async function GET(

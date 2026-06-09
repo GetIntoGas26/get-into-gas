@@ -9,47 +9,40 @@ type Lesson = { id: string; title: string; available: boolean }
 type Topic = { id: string; title: string; icon: string; lessons: Lesson[] }
 
 const TOPICS: Topic[] = [
-  { id: 'gas-safety', title: 'Gas Safety', icon: '🔥', lessons: [
-    { id: 'gas-safety-01', title: 'Gas Safety Fundamentals', available: true },
-    { id: 'gas-safety-02', title: 'Tightness Testing Procedures', available: true },
-    { id: 'gas-safety-03', title: 'RIDDOR & Reporting', available: false },
-    { id: 'gas-safety-04', title: 'Gas Safe Registration', available: false },
-    { id: 'gas-safety-05', title: 'Warning Notices', available: false },
-    { id: 'gas-safety-06', title: 'Legal Responsibilities', available: false },
-    { id: 'gas-safety-07', title: 'Identifying Unsafe Situations', available: false },
-    { id: 'gas-safety-08', title: 'Landlord Safety Records', available: false },
+  { id: 'fundamentals', title: 'Gas Fundamentals', icon: '🔥', lessons: [
+    { id: 'fundamentals-01', title: 'Welcome to Get Into Gas', available: true },
+    { id: 'fundamentals-02', title: 'Understanding the Role of a Gas Engineer', available: true },
+    { id: 'fundamentals-03', title: 'The Foundations of Gas Safety', available: false },
+    { id: 'fundamentals-04', title: 'What Is Natural Gas?', available: false },
+    { id: 'fundamentals-05', title: 'Properties of Natural Gas', available: false },
+    { id: 'fundamentals-06', title: 'Flammability and Explosive Limits', available: false },
+    { id: 'fundamentals-07', title: 'Gas Pressure Made Simple', available: false },
   ]},
   { id: 'combustion', title: 'Combustion', icon: '💨', lessons: [
-    { id: 'combustion-01', title: 'CO & CO2 Awareness', available: true },
-    { id: 'combustion-02', title: 'Flue Gas Analysis', available: false },
-    { id: 'combustion-03', title: 'Combustion Efficiency', available: false },
-    { id: 'combustion-04', title: 'Incomplete Combustion', available: false },
-    { id: 'combustion-05', title: 'Burner & Heat Exchanger Checks', available: false },
-    { id: 'combustion-06', title: 'CO Alarms & Action', available: false },
+    { id: 'combustion-01', title: 'What Is Combustion?', available: true },
+    { id: 'combustion-02', title: 'Complete vs Incomplete Combustion', available: false },
+    { id: 'combustion-03', title: 'Carbon Monoxide Explained', available: false },
+    { id: 'combustion-04', title: 'Preventing Carbon Monoxide Risks', available: false },
   ]},
-  { id: 'pipework', title: 'Pipework', icon: '🔩', lessons: [
-    { id: 'pipework-01', title: 'Pipework Standards', available: false },
-    { id: 'pipework-02', title: 'Pipe Sizing', available: false },
-    { id: 'pipework-03', title: 'Materials & Jointing', available: false },
-    { id: 'pipework-04', title: 'Installation Requirements', available: false },
-    { id: 'pipework-05', title: 'Pressure Testing', available: false },
-    { id: 'pipework-06', title: 'Purging Procedures', available: false },
-    { id: 'pipework-07', title: 'Emergency Control Valves', available: false },
+  { id: 'tightness', title: 'Tightness Testing', icon: '🔧', lessons: [
+    { id: 'tightness-01', title: 'Why Tightness Testing Matters', available: false },
+    { id: 'tightness-02', title: 'Understanding Let-By Tests', available: false },
+    { id: 'tightness-03', title: 'Stabilisation Explained', available: false },
+    { id: 'tightness-04', title: 'Reading Tightness Test Results', available: false },
+    { id: 'tightness-05', title: 'Tightness Testing Exam Tips', available: false },
   ]},
-  { id: 'ventilation', title: 'Ventilation', icon: '🌬️', lessons: [
-    { id: 'ventilation-01', title: 'Air Supply Principles', available: false },
-    { id: 'ventilation-02', title: 'Permanent Ventilation', available: false },
-    { id: 'ventilation-03', title: 'Flueless Appliances', available: false },
-    { id: 'ventilation-04', title: 'Open-Flued Requirements', available: false },
-    { id: 'ventilation-05', title: 'Room-Sealed Systems', available: false },
-    { id: 'ventilation-06', title: 'Ventilation Calculations', available: false },
+  { id: 'controls', title: 'Gas Controls', icon: '⚙️', lessons: [
+    { id: 'controls-01', title: 'Introduction to Gas Controls', available: false },
+    { id: 'controls-02', title: 'Emergency Control Valves', available: false },
+    { id: 'controls-03', title: 'Appliance Isolation Valves', available: false },
+    { id: 'controls-04', title: 'Governors and Pressure Control', available: false },
+    { id: 'controls-05', title: 'Flame Supervision Devices', available: false },
   ]},
-  { id: 'emergency', title: 'Emergency Procedures', icon: '🚨', lessons: [
-    { id: 'emergency-01', title: 'Gas Escape Procedure', available: false },
-    { id: 'emergency-02', title: 'Suspected Gas Escape', available: false },
-    { id: 'emergency-03', title: 'Customer Safety', available: false },
-    { id: 'emergency-04', title: 'Working at Risk', available: false },
-    { id: 'emergency-05', title: 'Isolation Procedures', available: false },
+  { id: 'unsafe', title: 'Unsafe Situations', icon: '⚠️', lessons: [
+    { id: 'unsafe-01', title: 'Understanding Unsafe Situations', available: false },
+    { id: 'unsafe-02', title: 'Immediately Dangerous', available: false },
+    { id: 'unsafe-03', title: 'At Risk', available: false },
+    { id: 'unsafe-04', title: 'Not to Current Standards', available: false },
   ]},
 ]
 

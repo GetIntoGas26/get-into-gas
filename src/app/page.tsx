@@ -42,20 +42,18 @@ export default function Home() {
       <div className="marquee-strip">
         <div className="marquee-inner">
           <span>🎧 <strong>CCN1 Audio Revision</strong></span>
-          <span>·</span><span>✓ <strong>Gas Safety</strong></span>
-          <span>·</span><span>✓ <strong>Tightness Testing</strong></span>
+          <span>·</span><span>✓ <strong>Gas Fundamentals</strong></span>
           <span>·</span><span>✓ <strong>Combustion</strong></span>
-          <span>·</span><span>✓ <strong>Pipework</strong></span>
-          <span>·</span><span>✓ <strong>Ventilation</strong></span>
-          <span>·</span><span>✓ <strong>Emergency Procedures</strong></span>
+          <span>·</span><span>✓ <strong>Tightness Testing</strong></span>
+          <span>·</span><span>✓ <strong>Gas Controls</strong></span>
+          <span>·</span><span>✓ <strong>Unsafe Situations</strong></span>
           <span>·</span><span>🎧 <strong>ACS Gas Training</strong></span>
           <span>·</span><span>✓ <strong>CCN1 Audio Revision</strong></span>
-          <span>·</span><span>✓ <strong>Gas Safety</strong></span>
-          <span>·</span><span>✓ <strong>Tightness Testing</strong></span>
+          <span>·</span><span>✓ <strong>Gas Fundamentals</strong></span>
           <span>·</span><span>✓ <strong>Combustion</strong></span>
-          <span>·</span><span>✓ <strong>Pipework</strong></span>
-          <span>·</span><span>✓ <strong>Ventilation</strong></span>
-          <span>·</span><span>✓ <strong>Emergency Procedures</strong></span>
+          <span>·</span><span>✓ <strong>Tightness Testing</strong></span>
+          <span>·</span><span>✓ <strong>Gas Controls</strong></span>
+          <span>·</span><span>✓ <strong>Unsafe Situations</strong></span>
           <span>·</span>
         </div>
       </div>
@@ -108,15 +106,14 @@ export default function Home() {
         <div className="sec">
           <div className="sec-eyebrow"><div className="eyebrow-pip" /><div className="eyebrow-label">Topics Covered</div></div>
           <h2>The full <span className="hl">CCN1 syllabus.</span><br />In your ears.</h2>
-          <p className="sec-sub">Every core ACS topic, broken into short audio lessons you can actually finish between jobs.</p>
+          <p className="sec-sub">25 lessons across 5 core topics. Every one built to be started and finished in a single commute.</p>
           <div className="topics-grid">
             {[
-              { icon: '🔥', title: 'Gas Safety', desc: 'Regulations, RIDDOR, Gas Safe requirements', count: 8 },
-              { icon: '🔧', title: 'Tightness Testing', desc: 'U-gauge, let-by, soundness procedures', count: 7 },
-              { icon: '💨', title: 'Combustion', desc: 'CO, CO₂, flue gas analysis, efficiency', count: 6 },
-              { icon: '🔩', title: 'Pipework', desc: 'Sizing, materials, installation standards', count: 7 },
-              { icon: '🌬️', title: 'Ventilation', desc: 'Air supply, vents, flueless appliances', count: 6 },
-              { icon: '🚨', title: 'Emergency Procedures', desc: 'Gas escapes, RIDDOR, customer safety', count: 5 },
+              { icon: '🔥', title: 'Gas Fundamentals', desc: 'Role of a gas engineer, properties of gas, pressure basics', count: 7 },
+              { icon: '💨', title: 'Combustion', desc: 'What combustion is, CO risks, incomplete combustion', count: 4 },
+              { icon: '🔧', title: 'Tightness Testing', desc: 'Let-by tests, stabilisation, reading results, exam tips', count: 5 },
+              { icon: '⚙️', title: 'Gas Controls', desc: 'ECVs, isolation valves, governors, flame supervision', count: 5 },
+              { icon: '⚠️', title: 'Unsafe Situations', desc: 'ID, AR and NCS classifications - what they mean and how to respond', count: 4 },
             ].map(t => (
               <div key={t.title} className="topic-card">
                 <div className="topic-icon">{t.icon}</div>
@@ -153,8 +150,8 @@ export default function Home() {
               <div className="p-price"><span className="p-cur">£</span><span className="p-val">49</span></div>
               <div className="p-desc">90 days full access - built around the length of a typical gas training period. Stream anywhere with signal.</div>
               <ul className="p-feats">
-                <li><span className="chk-o">✓</span>All 42+ audio lessons</li>
-                <li><span className="chk-o">✓</span>All 6 core topics</li>
+                <li><span className="chk-o">✓</span>All 25 audio lessons</li>
+                <li><span className="chk-o">✓</span>All 5 core topics</li>
                 <li><span className="chk-o">✓</span>Speed controls (1×–2×)</li>
                 <li><span className="chk-o">✓</span>Stream on any device</li>
                 <li><span className="chk-o">✓</span>90 days access</li>
