@@ -62,11 +62,15 @@ export async function GET(
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_status')
+    .select('subscription_tier, subscription_expires_at')
     .eq('id', user.id)
     .single()
 
-  if (profile?.subscription_status !== 'active') {
+  const tier = profile?.subscription_tier
+  const hasActiveTier = tier === 'lifetime' ||
+    (tier === 'course_pass' && (!profile.subscription_expires_at || new Date(profile.subscription_expires_at) > new Date()))
+
+  if (!hasActiveTier) {
     return NextResponse.json({ error: 'Subscription required' }, { status: 403 })
   }
 
