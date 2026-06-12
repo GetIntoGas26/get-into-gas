@@ -67,8 +67,9 @@ export async function GET(
     .single()
 
   const tier = profile?.subscription_tier
+  const expires = profile?.subscription_expires_at
   const hasActiveTier = tier === 'lifetime' ||
-    (tier === 'course_pass' && (!profile.subscription_expires_at || new Date(profile.subscription_expires_at) > new Date()))
+    (tier === 'course_pass' && (!expires || new Date(expires) > new Date()))
 
   if (!hasActiveTier) {
     return NextResponse.json({ error: 'Subscription required' }, { status: 403 })
