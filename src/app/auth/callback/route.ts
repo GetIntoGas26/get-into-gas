@@ -5,6 +5,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
+  // Where to send the user after the session is established (defaults to /lessons).
+  // The password-recovery flow passes ?next=/reset-password.
+  const next = searchParams.get('next') || '/lessons'
 
   if (code) {
     const cookieStore = await cookies()
@@ -25,7 +28,7 @@ export async function GET(request: NextRequest) {
 
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
-      return NextResponse.redirect(`${origin}/lessons`)
+      return NextResponse.redirect(`${origin}${next}`)
     }
   }
 

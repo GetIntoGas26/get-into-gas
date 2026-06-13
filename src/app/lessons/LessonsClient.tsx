@@ -217,6 +217,7 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
           <span className="ls-tier-badge">
             {tier === 'lifetime' ? '⭐ Lifetime' : tier === 'course_pass' ? '📚 Study Bundle' : '✦ Free plan'}
           </span>
+          {userEmail && <span className="ls-email" title={userEmail}>{userEmail}</span>}
           <button className="btn btn-ghost" style={{ fontSize: '0.85rem', padding: '0.4rem 0.9rem' }} onClick={logout}>
             Log out
           </button>
