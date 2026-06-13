@@ -19,6 +19,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'auth_required' }, { status: 401 })
   }
 
+  // Stripe not switched on yet (pre-launch) — let the client show a friendly notice
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return NextResponse.json({ error: 'not_configured' }, { status: 503 })
+  }
+
   const config = PLANS[plan]
   const stripe = getStripe()
   const origin = request.nextUrl.origin
