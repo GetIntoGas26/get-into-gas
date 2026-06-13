@@ -3,10 +3,13 @@
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { createClient } from '@/lib/supabase/client'
 
-type Tier = 'course_pass' | 'lifetime'
+type Tier = 'free' | 'course_pass' | 'lifetime'
 type ProgressRow = { lesson_id: string; completed_at: string | null; last_position_seconds: number }
 type Lesson = { id: string; title: string; available: boolean }
 type Topic = { id: string; title: string; icon: string; lessons: Lesson[] }
+
+// The 3 lessons free accounts can play (mirrors the `free` flags in the audio API route)
+const FREE_LESSONS = new Set(['fundamentals-01', 'fundamentals-02', 'combustion-01'])
 
 const TOPICS: Topic[] = [
   { id: 'fundamentals', title: 'Gas Fundamentals', icon: '🔥', lessons: [
@@ -182,6 +185,15 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
     window.location.href = '/'
   }
 
+  const handleRow = useCallback((lesson: Lesson) => {
+    if (!lesson.available) return
+    if (tier === 'free' && !FREE_LESSONS.has(lesson.id)) {
+      window.location.href = '/#pricing'
+      return
+    }
+    playLesson(lesson)
+  }, [tier, playLesson])
+
   useEffect(() => () => { audioRef.current?.pause() }, [])
 
   const topicLessons = TOPICS.find(t => t.id === activeTopic)?.lessons ?? []
@@ -197,8 +209,13 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
           Get Into<em>Gas</em>
         </a>
         <div className="ls-header-right">
+          {tier === 'free' && (
+            <a href="/#pricing" className="btn btn-primary" style={{ fontSize: '0.85rem', padding: '0.4rem 0.9rem' }}>
+              Unlock all lessons →
+            </a>
+          )}
           <span className="ls-tier-badge">
-            {tier === 'lifetime' ? '⭐ Lifetime' : '📚 Study Bundle'}
+            {tier === 'lifetime' ? '⭐ Lifetime' : tier === 'course_pass' ? '📚 Study Bundle' : '✦ Free plan'}
           </span>
           <button className="btn btn-ghost" style={{ fontSize: '0.85rem', padding: '0.4rem 0.9rem' }} onClick={logout}>
             Log out
@@ -225,11 +242,12 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
           {topicLessons.map((lesson, i) => {
             const isCurrent = currentLesson?.id === lesson.id
             const isListened = listened.has(lesson.id)
+            const locked = tier === 'free' && !FREE_LESSONS.has(lesson.id)
             return (
               <div
                 key={lesson.id}
-                className={`ls-row${isCurrent ? ' ls-current' : ''}${!lesson.available ? ' ls-unavail' : ''}`}
-                onClick={() => playLesson(lesson)}
+                className={`ls-row${isCurrent ? ' ls-current' : ''}${!lesson.available ? ' ls-unavail' : ''}${locked && lesson.available ? ' ls-locked' : ''}`}
+                onClick={() => handleRow(lesson)}
               >
                 <div className="ls-num">
                   {isListened
@@ -239,12 +257,16 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
                 </div>
                 <div className="ls-info">
                   <span className="ls-title">{lesson.title}</span>
-                  {!lesson.available && <span className="ls-soon">Coming soon</span>}
+                  {!lesson.available
+                    ? <span className="ls-soon">Coming soon</span>
+                    : locked && <span className="ls-soon">Members only</span>}
                 </div>
                 <div className="ls-action">
-                  {lesson.available
-                    ? (isCurrent && playing ? '⏸' : '▶')
-                    : <span className="ls-lock">○</span>
+                  {!lesson.available
+                    ? <span className="ls-lock">○</span>
+                    : locked
+                      ? <span className="ls-lock">🔒</span>
+                      : (isCurrent && playing ? '⏸' : '▶')
                   }
                 </div>
               </div>

@@ -16,16 +16,16 @@ export default async function LessonsPage() {
     .eq('id', user.id)
     .single()
 
-  // No paid tier — send to pricing
-  if (!profile?.subscription_tier) redirect('/#pricing')
-
-  // Hard lock: Course Pass expired
-  if (
-    profile.subscription_tier === 'course_pass' &&
-    profile.subscription_expires_at &&
-    new Date(profile.subscription_expires_at) < new Date()
-  ) {
-    redirect('/#pricing')
+  // Effective tier: everyone logged in reaches /lessons.
+  // Free (and expired Course Pass) see the 3 free lessons unlocked, rest gated.
+  let tier: 'free' | 'course_pass' | 'lifetime' = 'free'
+  if (profile?.subscription_tier === 'lifetime') {
+    tier = 'lifetime'
+  } else if (profile?.subscription_tier === 'course_pass') {
+    const expired =
+      profile.subscription_expires_at &&
+      new Date(profile.subscription_expires_at) < new Date()
+    tier = expired ? 'free' : 'course_pass'
   }
 
   const { data: progress } = await supabase
@@ -37,7 +37,7 @@ export default async function LessonsPage() {
     <LessonsClient
       userId={user.id}
       userEmail={user.email ?? ''}
-      tier={profile.subscription_tier as 'course_pass' | 'lifetime'}
+      tier={tier}
       initialProgress={progress ?? []}
     />
   )

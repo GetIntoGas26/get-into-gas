@@ -342,6 +342,8 @@ footer { background: var(--black2); border-top: 1px solid var(--border); padding
 .ls-row:hover:not(.ls-unavail) { background: rgba(255,255,255,0.04); }
 .ls-current { background: rgba(255,95,31,0.08) !important; }
 .ls-unavail { cursor: default; opacity: 0.45; }
+.ls-locked { opacity: 0.6; }
+.ls-locked .ls-soon { color: var(--orange); }
 .ls-num { font-size: 0.85rem; color: var(--grey); text-align: center; font-weight: 600; }
 .ls-check { color: var(--orange); font-weight: 800; font-size: 0.9rem; }
 .ls-info { display: flex; flex-direction: column; gap: 0.2rem; }
