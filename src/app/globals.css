@@ -370,7 +370,7 @@ footer { background: var(--black2); border-top: 1px solid var(--border); padding
 .ls-pl-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; }
 .ls-pl-fill { height: 100%; background: var(--orange); border-radius: 2px; transition: width 0.1s linear; }
 .ls-pl-times { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--grey2); }
-.ls-pl-right { display: flex; justify-content: flex-end; }
+.ls-pl-right { display: flex; justify-content: flex-end; gap: 0.5rem; }
 .ls-pl-spd { background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 6px; color: var(--grey); font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.6rem; cursor: pointer; transition: color 0.15s; }
 .ls-pl-spd:hover { color: var(--white); }
 

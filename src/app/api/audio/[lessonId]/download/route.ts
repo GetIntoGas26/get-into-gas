@@ -1,8 +1,9 @@
 import { createClient } from '@/lib/supabase/server'
-import { getAudioSignedUrl } from '@/lib/r2'
-import { LESSONS, hasActiveAccess } from '@/lib/lessons'
+import { getAudioDownloadUrl } from '@/lib/r2'
+import { LESSONS } from '@/lib/lessons'
 import { NextResponse, type NextRequest } from 'next/server'
 
+// Lifetime-only: returns a short-lived signed URL that downloads the MP3 as a file.
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ lessonId: string }> }
@@ -14,13 +15,6 @@ export async function GET(
     return NextResponse.json({ error: 'Lesson not found' }, { status: 404 })
   }
 
-  // Free lessons — no auth needed
-  if (lesson.free) {
-    const url = await getAudioSignedUrl(lesson.file)
-    return NextResponse.json({ url })
-  }
-
-  // Paid lessons — check subscription
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -30,14 +24,15 @@ export async function GET(
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('subscription_tier, subscription_expires_at')
+    .select('subscription_tier')
     .eq('id', user.id)
     .single()
 
-  if (!hasActiveAccess(profile?.subscription_tier, profile?.subscription_expires_at)) {
-    return NextResponse.json({ error: 'Subscription required' }, { status: 403 })
+  // Downloads are a Lifetime perk only
+  if (profile?.subscription_tier !== 'lifetime') {
+    return NextResponse.json({ error: 'Downloads are available on the Lifetime plan' }, { status: 403 })
   }
 
-  const url = await getAudioSignedUrl(lesson.file)
+  const url = await getAudioDownloadUrl(lesson.file, lesson.file)
   return NextResponse.json({ url })
 }

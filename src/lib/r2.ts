@@ -18,3 +18,14 @@ export async function getAudioSignedUrl(filename: string): Promise<string> {
   // URL valid for 2 hours
   return getSignedUrl(r2, command, { expiresIn: 7200 })
 }
+
+// Signed URL that forces a browser download with a friendly filename (Lifetime tier).
+export async function getAudioDownloadUrl(filename: string, downloadName: string): Promise<string> {
+  const command = new GetObjectCommand({
+    Bucket: process.env.R2_BUCKET_NAME!,
+    Key: filename,
+    ResponseContentDisposition: `attachment; filename="${downloadName}"`,
+  })
+  // Short-lived — just long enough to start the download
+  return getSignedUrl(r2, command, { expiresIn: 600 })
+}

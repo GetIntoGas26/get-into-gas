@@ -217,6 +217,22 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
     if (audioRef.current) audioRef.current.playbackRate = SPEEDS[next]
   }, [speedIdx])
 
+  const downloadLesson = useCallback(async (lessonId: string) => {
+    try {
+      const res = await fetch(`/api/audio/${lessonId}/download`)
+      if (!res.ok) throw new Error('Download unavailable')
+      const { url } = await res.json()
+      const a = document.createElement('a')
+      a.href = url
+      a.download = ''
+      document.body.appendChild(a)
+      a.click()
+      a.remove()
+    } catch (e) {
+      console.error(e)
+    }
+  }, [])
+
   const logout = async () => {
     await supabase.auth.signOut()
     window.location.href = '/'
@@ -341,6 +357,9 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
             </div>
           </div>
           <div className="ls-pl-right">
+            {tier === 'lifetime' && (
+              <button className="ls-pl-spd" title="Download for offline" onClick={() => downloadLesson(currentLesson.id)}>⬇</button>
+            )}
             <button className="ls-pl-spd" onClick={cycleSpeed}>{SPEED_LABELS[speedIdx]}</button>
           </div>
         </div>
