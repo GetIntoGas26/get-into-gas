@@ -229,12 +229,15 @@ export default function Home() {
               <img src="/icon.svg" width="24" height="24" alt="" style={{ borderRadius: '5px' }} />
               Get Into<em>Gas</em>
             </a>
-            <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', padding: 0, margin: 0 }}>
+            <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', padding: 0, margin: 0, flexWrap: 'wrap' }}>
               <li><a href="#top">Sample</a></li>
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#topics">Topics</a></li>
               <li><a href="#pricing">Pricing</a></li>
               <li><a href="#about">About</a></li>
+              <li><a href="/terms">Terms</a></li>
+              <li><a href="/privacy">Privacy</a></li>
+              <li><a href="/refunds">Refunds</a></li>
             </ul>
           </div>
           <div className="footer-bottom">
