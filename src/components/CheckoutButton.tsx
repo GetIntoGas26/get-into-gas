@@ -56,11 +56,7 @@ export default function CheckoutButton({ plan, className, children }: {
       <button type="button" className={className} onClick={go} disabled={loading}>
         {loading ? 'Loading…' : children}
       </button>
-      {message && (
-        <p style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: 'var(--orange)', textAlign: 'center', lineHeight: 1.5 }}>
-          {message}
-        </p>
-      )}
+      {message && <p className="checkout-msg">{message}</p>}
     </>
   )
 }

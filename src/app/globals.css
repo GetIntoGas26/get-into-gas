@@ -236,6 +236,8 @@ h2 .hl2 { color: var(--yellow); }
 .chk-o { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 0.6rem; flex-shrink: 0; }
 .price-card.pop .chk-o { border-color: rgba(255,255,255,0.3); color: #fff; }
 .price-card .btn { width: 100%; justify-content: center; }
+.checkout-msg { margin-top: 0.75rem; font-size: 0.8rem; color: var(--orange); text-align: center; line-height: 1.5; }
+.price-card.pop .checkout-msg { color: #fff; }
 .btn-white { background: #fff; color: var(--orange); font-weight: 800; }
 .btn-white:hover { background: var(--white2); transform: translateY(-1px); }
 .btn-dark-outline { background: transparent; color: var(--white2); border: 1px solid var(--border2); }
