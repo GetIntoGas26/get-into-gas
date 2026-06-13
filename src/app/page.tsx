@@ -1,9 +1,12 @@
 import Nav from '@/components/Nav'
 import AudioPlayer from '@/components/AudioPlayer'
+import CheckoutButton from '@/components/CheckoutButton'
+import CheckoutResume from '@/components/CheckoutResume'
 
 export default function Home() {
   return (
     <>
+      <CheckoutResume />
       <Nav />
 
       {/* HERO */}
@@ -156,19 +159,19 @@ export default function Home() {
                 <li><span className="chk-o">✓</span>Stream on any device</li>
                 <li><span className="chk-o">✓</span>90 days access</li>
               </ul>
-              <a href="/signup" className="btn btn-white btn-lg">Get Course Pass →</a>
+              <CheckoutButton plan="study_bundle" className="btn btn-white btn-lg">Get Study Bundle →</CheckoutButton>
             </div>
             <div className="price-card">
               <div className="p-name">Lifetime</div>
               <div className="p-price"><span className="p-cur">£</span><span className="p-val">59</span></div>
               <div className="p-desc">One payment, forever. Download lessons for offline use - works in the van with no signal.</div>
               <ul className="p-feats">
-                <li><span className="chk-o">✓</span>Everything in Course Pass</li>
+                <li><span className="chk-o">✓</span>Everything in Study Bundle</li>
                 <li><span className="chk-o">✓</span>Download MP3s for offline use</li>
                 <li><span className="chk-o">✓</span>Works without signal</li>
                 <li><span className="chk-o">✓</span>All future content</li>
               </ul>
-              <a href="/signup" className="btn btn-dark-outline btn-lg">Get Lifetime Access</a>
+              <CheckoutButton plan="lifetime" className="btn btn-dark-outline btn-lg">Get Lifetime Access</CheckoutButton>
             </div>
           </div>
         </div>

@@ -18,10 +18,14 @@ export default function SignupPage() {
     setLoading(true)
     setError('')
 
+    // If they came from a pricing button, resume checkout after email confirmation
+    const plan = new URLSearchParams(window.location.search).get('plan')
+    const next = plan === 'study_bundle' || plan === 'lifetime' ? `/?checkout=${plan}` : '/lessons'
+
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: { emailRedirectTo: `${location.origin}/auth/callback` },
+      options: { emailRedirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(next)}` },
     })
 
     if (error) {
