@@ -34,8 +34,9 @@ export default function OgImage() {
           >
             🎧
           </div>
-          <div style={{ fontSize: '40px', fontWeight: 800, color: '#fff' }}>
-            Get Into <span style={{ color: '#ff5f1f' }}>Gas</span>
+          <div style={{ display: 'flex', gap: '14px', fontSize: '40px', fontWeight: 800, color: '#fff' }}>
+            <span>Get Into</span>
+            <span style={{ color: '#ff5f1f' }}>Gas</span>
           </div>
         </div>
 
