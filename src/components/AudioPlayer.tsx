@@ -7,10 +7,10 @@ const SPEEDS = [1, 1.25, 1.5, 2]
 const SPEED_LABELS = ['1×', '1.25×', '1.5×', '2×']
 
 const LESSONS = [
-  { id: 'gas-safety-01', icon: '🔥', title: 'Gas Safety Fundamentals',         meta: 'Module 1 · Free',                    free: true  },
-  { id: 'gas-safety-02', icon: '🔧', title: 'Gas Tightness Testing',            meta: 'Module 2 · Free',                    free: true  },
-  { id: 'combustion-01', icon: '💨', title: 'Combustion & CO Awareness',        meta: 'Module 3 · Free',                    free: true  },
-  { id: 'pipework-01',   icon: '🔩', title: 'Pipework Standards',               meta: 'Module 4 · Members only',            free: false },
+  { id: 'fundamentals-01', icon: '🎧', title: 'Welcome to Get Into Gas',              meta: 'Lesson 1 · Free',         free: true  },
+  { id: 'fundamentals-02', icon: '👷', title: 'The Role of a Gas Engineer',           meta: 'Lesson 2 · Free',         free: true  },
+  { id: 'combustion-01',   icon: '💨', title: 'What Is Combustion?',                  meta: 'Lesson 8 · Free',         free: true  },
+  { id: 'combustion-03',   icon: '⚠️', title: 'Carbon Monoxide Explained',            meta: 'Lesson 10 · Members only', free: false },
 ]
 
 function fmt(secs: number) {
@@ -20,7 +20,7 @@ function fmt(secs: number) {
 }
 
 export default function AudioPlayer() {
-  const [currentId, setCurrentId]   = useState('gas-safety-02')
+  const [currentId, setCurrentId]   = useState('fundamentals-01')
   const [playing, setPlaying]       = useState(false)
   const [loading, setLoading]       = useState(false)
   const [progress, setProgress]     = useState(0)
