@@ -69,6 +69,12 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
   const urlCache = useRef<Record<string, string>>({})
   const currentLessonIdRef = useRef<string | null>(null)
   const playingRef = useRef(false)
+  // Resume playback: last saved position per lesson, seek pending for next load, throttle marker
+  const savedPositions = useRef<Record<string, number>>(
+    Object.fromEntries(initialProgress.map(p => [p.lesson_id, p.last_position_seconds]))
+  )
+  const pendingSeekRef = useRef(0)
+  const lastSaveRef = useRef(0)
 
   const [activeTopic, setActiveTopic] = useState(TOPICS[0].id)
   const [currentLesson, setCurrentLesson] = useState<Lesson | null>(null)
@@ -92,24 +98,50 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
     ).then(() => {})
   }, [supabase, userId])
 
+  // Persist resume position. Omits completed_at so an existing "completed" mark is preserved.
+  const savePosition = useCallback((lessonId: string, seconds: number) => {
+    savedPositions.current[lessonId] = seconds
+    supabase.from('lesson_progress').upsert(
+      { user_id: userId, lesson_id: lessonId, last_position_seconds: Math.floor(seconds) },
+      { onConflict: 'user_id,lesson_id' }
+    ).then(() => {})
+  }, [supabase, userId])
+
   const getOrCreateAudio = useCallback(() => {
     if (!audioRef.current) {
       const audio = new Audio()
       audio.addEventListener('timeupdate', () => {
         setCurrentTime(audio.currentTime)
         setAudioProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0)
+        // Save resume position roughly every 10s of playback
+        const id = currentLessonIdRef.current
+        if (id && Math.abs(audio.currentTime - lastSaveRef.current) >= 10) {
+          lastSaveRef.current = audio.currentTime
+          savePosition(id, audio.currentTime)
+        }
       })
       audio.addEventListener('durationchange', () => setDuration(audio.duration))
+      // Seek to saved position once the new source's metadata is ready
+      audio.addEventListener('loadedmetadata', () => {
+        const seek = pendingSeekRef.current
+        if (seek > 0 && audio.duration && seek < audio.duration - 5) {
+          audio.currentTime = seek
+        }
+        pendingSeekRef.current = 0
+      })
       audio.addEventListener('ended', () => {
         setPlaying(false)
         setAudioProgress(0)
         setCurrentTime(0)
-        if (currentLessonIdRef.current) markListened(currentLessonIdRef.current)
+        if (currentLessonIdRef.current) {
+          savedPositions.current[currentLessonIdRef.current] = 0
+          markListened(currentLessonIdRef.current)
+        }
       })
       audioRef.current = audio
     }
     return audioRef.current
-  }, [markListened])
+  }, [markListened, savePosition])
 
   const playLesson = useCallback(async (lesson: Lesson) => {
     if (!lesson.available) return
@@ -119,6 +151,7 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
       if (playingRef.current) {
         audioRef.current.pause()
         setPlaying(false)
+        savePosition(lesson.id, audioRef.current.currentTime)
       } else {
         await audioRef.current.play()
         setPlaying(true)
@@ -142,6 +175,9 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
         urlCache.current[lesson.id] = url
       }
       const audio = getOrCreateAudio()
+      // Queue resume-to position; applied on loadedmetadata
+      pendingSeekRef.current = savedPositions.current[lesson.id] ?? 0
+      lastSaveRef.current = pendingSeekRef.current
       audio.src = urlCache.current[lesson.id]
       audio.playbackRate = SPEEDS[speedIdx]
       await audio.play()
@@ -160,11 +196,12 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
     if (playingRef.current) {
       audio.pause()
       setPlaying(false)
+      if (currentLessonIdRef.current) savePosition(currentLessonIdRef.current, audio.currentTime)
     } else {
       await audio.play()
       setPlaying(true)
     }
-  }, [])
+  }, [savePosition])
 
   const scrub = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const audio = audioRef.current
@@ -194,7 +231,13 @@ export default function LessonsClient({ userId, userEmail, tier, initialProgress
     playLesson(lesson)
   }, [tier, playLesson])
 
-  useEffect(() => () => { audioRef.current?.pause() }, [])
+  useEffect(() => () => {
+    const audio = audioRef.current
+    if (audio && currentLessonIdRef.current && audio.currentTime > 0 && !audio.ended) {
+      savePosition(currentLessonIdRef.current, audio.currentTime)
+    }
+    audio?.pause()
+  }, [savePosition])
 
   const topicLessons = TOPICS.find(t => t.id === activeTopic)?.lessons ?? []
   const currentTopic = TOPICS.find(t => t.lessons.some(l => l.id === currentLesson?.id))
