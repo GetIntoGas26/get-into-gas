@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,13 +21,11 @@ export const metadata: Metadata = {
     siteName: 'Get Into Gas',
     title: 'Get Into Gas - CCN1 Revision That Works Around Your Job',
     description: 'Audio revision for working gas engineers. Learn CCN1 anywhere - no desk, no textbooks. ACS exam prep that fits around your job.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Get Into Gas - CCN1 Revision That Works Around Your Job',
     description: 'Audio revision for working gas engineers. CCN1 ACS exam prep that fits around your job.',
-    images: ['/og-image.png'],
   },
 }
 
@@ -32,6 +33,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.className}>
       <body>{children}</body>
+      {GA_ID && (
+        <>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+          <Script id="ga4" strategy="afterInteractive">
+            {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+          </Script>
+        </>
+      )}
     </html>
   )
 }
